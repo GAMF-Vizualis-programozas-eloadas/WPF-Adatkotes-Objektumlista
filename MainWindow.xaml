@@ -1,0 +1,50 @@
+﻿<Window x:Class="WPF_Adatkotes_Objektumlista.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Adatkotes_Objektumlista"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="227" Width="493">
+	<!-- Itt csak jelezzük, hogy adatkötés lesz, az adatforrást a C# kódban adjuk meg -->
+	<Grid Name="grRács"  DataContext="{Binding}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="150" />
+			<ColumnDefinition Width="150*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30" />
+			<RowDefinition Height="30" />
+			<RowDefinition Height="30" />
+			<RowDefinition Height="30" />
+			<RowDefinition Height="30" />
+			<RowDefinition Height="30" />
+			
+		</Grid.RowDefinitions>
+		<Label Grid.Row="0" Grid.Column="0">Vezetéknév</Label>
+		<TextBlock Text="{Binding Path=Vezetéknév}" Name="tbVezetéknév"  
+              Grid.Row="0" Grid.Column="1" />
+		<Label Grid.Row="1" Grid.Column="0">Keresztnév</Label>
+		<TextBlock Text="{Binding Path=Keresztnév}" Name="tbKeresztnév"  
+              Grid.Row="1" Grid.Column="1" />
+		<Label Grid.Row="2" Grid.Column="0">Neptun</Label>
+		<TextBlock Text="{Binding Path=Neptun}" Name="tbNeptun" 
+              Grid.Row="2" Grid.Column="1"/>
+		<Label Grid.Row="3" Grid.Column="0">e-mail</Label>
+		<TextBlock Text="{Binding Path=email}" Name="tbemail" 
+              Grid.Row="3" Grid.Column="1"/>
+		<Label Grid.Row="4" Grid.Column="0">GöngyölítettÁtlag</Label>
+		<TextBlock Text="{Binding Path=GöngyölítettÁtlag}" 
+              Name="tbGöngyölítettÁtlag" Grid.Row="4" 
+              Grid.Column="1"/>
+		<StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" >
+			<Button Name="btLe" Width="50" Click="btLe_Click">&lt;</Button>
+			<Button Name="btFel" Width="50" Click="btFel_Click">&gt;</Button>
+			<Button Name="btLegkisebbÁtlag" Width="95" 
+             Click="btLegkisebbÁtlag_Click" 
+             Margin="30,0,0,0">Legkisebb átlag</Button>
+			<Button Name="btLegnagyobbÁtlag" Width="95" 
+             Click="btLegnagyobbÁtlag_Click">Legnagyobb átlag</Button>
+		</StackPanel>
+	</Grid>
+</Window>
